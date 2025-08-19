@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // let str1 = 'hello world';
+    // let str2 = 'lorem ipsum';
+    // let str3 = 'javascript is cool';
+
+    // console.log(str1.length);
+    // console.log(str2.length);
+    // console.log(str3.length);
+    //
+    // console.log(str1.toUpperCase());
+    // console.log(str2.toUpperCase());
+    // console.log(str3.toUpperCase());
+
+    // let str1 = 'HELLO WORLD';
+    // let str2 = 'LOREM IPSUM';
+    // let str3 = 'JAVASCRIPT IS COOL';
+    //
+    // console.log(str1.toLowerCase());
+    // console.log(str2.toLowerCase());
+    // console.log(str3.toLowerCase());
+
+    // let str = ' dirty string   '
+    // console.log(str.trim());
+
+    // function stringToarray(str){
+    //     if(str){
+    //         const arro = str.split(' ');
+    //         return arro;
+    //     }
+    //     return [''];
+    // };
+    //
+    // let str = 'Ревуть воли як ясла повні';
+    // let ree = stringToarray(str);
+    // console.log(ree);
+
+    // let arr = [10,8,-7,55,987,-1011,0,1050,0]
+    //
+    // let mapt = arr.map(function (item){
+    //     return item + " ";
+    // });
+    //
+    // console.log(mapt);
+
+    // function sortNums(array,direction){
+    //     if(direction === 'ascending'){
+    //         array.sort(function(a,b){
+    //             return a - b;
+    //         })
+    //     }else if(direction === 'descending'){
+    //             array.sort(function(a,b){
+    //                 return b - a;
+    //             })
+    //         }
+    //     return array;
+    // }
+    //
+    // let nums = [11,21,3];
+    //
+    // console.log(sortNums(nums,'ascending'))
+    // console.log(sortNums(nums,'descending'))
+
+    // let coursesAndDurationArray = [
+    //     {title: 'JavaScript Complex', monthDuration: 5},
+    //     {title: 'Java Complex', monthDuration: 6},
+    //     {title: 'Python Complex', monthDuration: 6},
+    //     {title: 'QA Complex', monthDuration: 4},
+    //     {title: 'FullStack', monthDuration: 7},
+    //     {title: 'Frontend', monthDuration: 4}
+    // ];
+    //
+    // let sort = coursesAndDurationArray.sort((a, b) => {
+    //         return b.monthDuration - a.monthDuration;
+    //     });
+    //
+    // console.log(sort);
+    //
+    // let filteredUsers = coursesAndDurationArray.filter(value => value.monthDuration > 5);
+    // console.log(filteredUsers);
+    //
+    // let new_one = coursesAndDurationArray.map(function (value, index) {
+    //     return {id: index + 1, ...value};
+    // });
+    //
+    // console.log(new_one);
+
+    //
+    // {
+    //     cardSuit: '',  'spade', 'diamond','heart', 'clubs'
+    //         value: '',  '6'-'10', 'ace','jack','queen','king'
+    //     color:'',  'red','black'
+    // }
+    //
+    // const suits = ['spade', 'diamond', 'heart', 'club'];
+    // const values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+    //
+    // const cards = [];
+    // for (const suit of suits) {
+    //     for (const value of values) {
+    //         const card = {cardSuit: suit, value: value};
+    //         if (suit === 'heart' || suit === 'diamond') {
+    //             card.color = 'red';
+    //         } else {
+    //             card.color = 'black';
+    //         }
+    //         cards.push(card);
+    //     }
+    // }
+    //
+    // console.log(cards);
+    // console.log(cards.find(card => card.value === 'ace' && card.cardSuit === 'spade'));
+    // console.log(cards.filter(card => card.value === '6'));
+    // console.log(cards.filter(card => card.color === 'red'));
+    // console.log(cards.filter(card => card.cardSuit === 'diamond'));
+    // console.log(cards.filter(card => card.cardSuit === 'club' && (card.value !== '6' || card.value !== '7' || card.value !== '8' || card.value !== '9')));
+    //
+
+    // let coursesArray = [
+    //     {
+    //         title: 'JavaScript Complex',
+    //         monthDuration: 5,
+    //         hourDuration: 909,
+    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    //     },
+    //     {
+    //         title: 'Java Complex',
+    //         monthDuration: 6,
+    //         hourDuration: 909,
+    //         modules: ['html',
+    //             'css',
+    //             'js',
+    //             'mysql',
+    //             'mongodb',
+    //             'angular',
+    //             'aws',
+    //             'docker',
+    //             'git',
+    //             'java core',
+    //             'java advanced']
+    //     },
+    //     {
+    //         title: 'Python Complex',
+    //         monthDuration: 6,
+    //         hourDuration: 909,
+    //         modules: ['html',
+    //             'css',
+    //             'js',
+    //             'mysql',
+    //             'mongodb',
+    //             'angular',
+    //             'aws',
+    //             'docker',
+    //             'python core',
+    //             'python advanced']
+    //     },
+    //     {
+    //         title: 'QA Complex',
+    //         monthDuration: 4,
+    //         hourDuration: 909,
+    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    //     },
+    //     {
+    //         title: 'FullStack',
+    //         monthDuration: 7,
+    //         hourDuration: 909,
+    //         modules: ['html',
+    //             'css',
+    //             'js',
+    //             'mysql',
+    //             'mongodb',
+    //             'react',
+    //             'angular',
+    //             'aws',
+    //             'docker',
+    //             'git',
+    //             'node.js',
+    //             'python',
+    //             'java']
+    //     },
+    //     {
+    //         title: 'Frontend',
+    //         monthDuration: 4,
+    //         hourDuration: 909,
+    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    //     }
+    // ];
+    //
+    // // let first_t = coursesArray.filter(value => value.modules.includes('sass'));
+    // // console.log(first_t);
+    // //
+    // // let second_t = coursesArray.filter(value => value.modules.includes('docker'));
+    // // console.log(second_t);
+    //
+    // // let new_courses = [];
+    // // for(const item of coursesArray){
+    // //     if(item.modules.includes('sass')){
+    // //     new_courses.push(item);}
+    // // }
+    // // console.log(new_courses);
+    //
+    // let new_courses2 = [];
+    // for(const item of coursesArray){
+    //     for(const module of item.modules){
+    //         if(module === 'docker'){
+    //         new_courses2.push(item);}
+    //     }
+    // }
+    // console.log(new_courses2);
+
+
+</script>
+
+</body>
+</html>

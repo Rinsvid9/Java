@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+     let firs =Number(prompt("Enter your number please"));
+     if (firs === 0 ) {
+         console.log("Wrong");
+     }
+     else{
+         console.log("Right");
+     }
+
+     let time = Number(prompt("Enter time"));
+
+     if (time <= 20) {
+         console.log("Ths if first part of hours");
+     } else if (time <= 40) {
+         console.log("This is the second part of hours");
+     } else if  (time <= 59) {
+         console.log("Ths is the third part of hours");
+     } else if (time >= 60) {
+         console.log("Incorrect time, try one more time");
+     } else {
+         console.log("Drink your tea mad hatter and calm down!");
+     }
+
+     let month = Number(prompt("Enter day"));
+
+     if (month <= 10) {
+         console.log("Ths if first of decade");
+     } else if (month <= 20) {
+         console.log("This is the second of decade");
+     } else if  (month <= 31) {
+         console.log("Ths is the third of decade");
+     } else if (month >= 32) {
+         console.log("Nice try alien, where is your starship?");
+     } else {
+         console.log("AAAAAAA, reptilian humanoids close!");
+     }
+
+
+     let task = {
+         monday: {
+             morning:"1. Tequila with hookers",
+             afternoon:"2. Smoke",
+             evening:"3. Try to not die"
+         },
+         tuesday: {
+             morning: "1. Fighting with boss",
+             afternoon: "2. Drink with boss",
+             evening: '3. To vomit with boss',
+         },
+         wednesday: {
+             morning: "1. To put a Christmas tree ",
+             afternoon: "2 Dance around Christmas tree",
+             evening: "3 Remove again, now summer",
+         },
+         thursday: {
+             morning: "1 Damage printer",
+             afternoon: "2 To frame a colleague",
+             evening: "3 Drink tequila with boss",
+         },
+         friday: {
+             morning: '1 To water the cat',
+             afternoon: "2 To stroke the plants",
+             evening: "3 To smoke the plants",
+         },
+         saturday: {
+             morning: "1 Drink tequila from belly button",
+             afternoon: "2 Fight with the police",
+             evening: "3 Smoke with the police",
+         },
+         sunday: {
+             morning: "1 Fix face",
+             afternoon: "2 Fix liver",
+             evening: "3 Drink tequila with boss from belly button",
+         }
+     }
+
+     let yourDay = prompt("Enter your day name");
+
+     switch(yourDay) {
+         case "monday":
+             console.log(task.monday.morning, task.monday.afternoon, task.monday.evening);
+             break;
+             case "1":
+                 console.log(task.monday.morning, task.monday.afternoon, task.monday.evening);
+                 break;
+                 case "2":
+                     console.log(task.tuesday.morning, task.tuesday.afternoon, task.tuesday.evening);
+                     break;
+                     case "tuesday":
+                         console.log(task.tuesday, task.tuesday.afternoon, task.tuesday.evening);
+                         break;
+                         case "wednesday":
+                             console.log(task.wednesday.morning, task.wednesday.afternoon, task.wednesday.evening);
+                             break;
+                             case "3":
+                                 console.log(task.wednesday.morning, task.wednesday.afternoon, task.wednesday.evening);
+                                 break;
+                                 case "thursday":
+                                     console.log(task.tuesday.morning, task.tuesday.afternoon, task.tuesday.evening);
+                                     break;
+                                     case "4":
+                                         console.log(task.tuesday.morning, task.tuesday.afternoon, task.tuesday.evening);
+                                         break;
+                                         case "friday":
+                                             console.log(task.friday.morning, task.friday.afternoon, task.friday.evening);
+                                             break;
+                                             case "5":
+                                                 console.log(task.friday.morning, task.friday.afternoon, task.friday.evening);
+                                                 break;
+                                                 case "saturday":
+                                                     console.log(task.saturday.morning, task.saturday.afternoon, task.saturday.evening);
+                                                     break;
+                                                     case "6":
+                                                         console.log(task.saturday.morning, task.saturday.afternoon, task.saturday.evening);
+                                                         break;
+                                                         case "sunday":
+                                                             console.log(task.sunday.morning, task.sunday.afternoon, task.sunday.evening);
+                                                             break;
+                                                             case "7":
+                                                                 console.log(task.sunday.morning, task.sunday.afternoon, task.sunday.evening);
+                                                                 break;
+
+     }
+
+
+     let fist = Number(prompt("Enter a first number"));
+     let second = Number(prompt("Enter a second number"));
+
+     if (fist > second) {
+         console.log("First number bigger");
+     } else if (second > fist) {
+         console.log("Second number bigger");
+     }else if (second === fist) {
+         console.log("They are the same");
+     }else {
+         console.log("Put correct number baby");
+     }
+
+     let x;
+
+     if (x === 0 || x === "" || x === "undefined" || x === NaN || x === null || x === false){
+         x = "default";
+     }
+
+    let coursesAndDurationArray = [
+        {title: 'JavaScript Complex', monthDuration: 5},
+        {title: 'Java Complex', monthDuration: 6},
+        {title: 'Python Complex', monthDuration: 6},
+        {title: 'QA Complex', monthDuration: 4},
+        {title: 'FullStack', monthDuration: 7},
+        {title: 'Frontend', monthDuration: 4}
+    ];
+
+    if (coursesAndDurationArray.some(coursesAndDurationArray => coursesAndDurationArray.monthDuration >= 5)){
+        console.log("Cool");
+    }
+
+</script>
+
+</body>
+</html>
