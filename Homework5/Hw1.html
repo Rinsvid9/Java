@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+//    let squ = (a, b) => a * b;
+//    console.log(squ(5, 4));
+//
+//    let circle = (radius) => Math.PI * (radius ** 2);
+//    console.log(circle(6));
+//
+//    let tube = (r, h) => ((Math.PI * 2) * r * h) + (Math.PI * (r ** 2))*2;
+//    console.log(tube(6, 4));
+//
+//    let prin = (arr) => {for (const item of arr){
+//        console.log(item);}
+//    }
+//
+//    let users = [
+//        {name: 'vasya', age: 31, status: false},
+//        {name: 'petya', age: 30, status: true},
+//        {name: 'kolya', age: 29, status: true},
+//        {name: 'olya', age: 28, status: false},
+//        {name: 'max', age: 30, status: true},
+//        {name: 'anya', age: 31, status: false},
+//        {name: 'oleg', age: 28, status: false},
+//        {name: 'andrey', age: 29, status: true},
+//        {name: 'masha', age: 30, status: true},
+//        {name: 'olya', age: 31, status: false},
+//        {name: 'max', age: 31, status: true}
+//    ];
+//
+//    console.log(prin(users));
+//
+//
+//    let  parag = (tex) =>  document.write(`<p>${tex}</p>`);
+//
+//    parag('fdkhkhfkjdhfkjdh');
+//
+//    let ul = (text) =>  {
+//        document.write(`<ul><li>${text}</li>
+//                            <li>${text}</li>
+//                            <li>${text}</li></ul>`);
+//    }
+//
+//    ul('fdkhkhfkjdhfkjdh');
+//
+//    let ul2 = (tex, count) =>{
+//        for (i = 0; i < count; i++){
+//            document.write(`<ul><li>${tex}</li></ul>`);
+//        }
+//    }
+//    console.log(ul2('red', 5));
+
+   //  let rand = (arr) => {
+   //      for (let i = 0; i < arr.length; i++) {
+   //                  const arrElement = arr[i];
+   //                  document.write(`<ul><li>${arrElement}</li></ul>`);
+   //          }
+   //  }
+   //
+   //  let arrBoo = [34, 'Suga', 11, 42, true, "Rin",168,120,345,188, true, false, 'lee', true ];
+   //
+   // rand(arrBoo);
+
+   let dic = (arr) => {
+       for(const item of arr){
+                   document.write(`<div><p>${item.id}</p>
+                                        <p>${item.name}</p>
+                                        <p>${item.age}</p>
+                                    </div>`);
+               }
+   }
+   let boo = [{id: 1, name: 'vasya', age: 31}];
+   dic(boo);
+
+   let small_number = (arra) =>{
+       let min = arra[0];
+           for(let i=0;i<arra.length;i++){
+               if(arra[i] < min){
+                   min = arra[i];
+               }
+           }
+       return min
+   };
+   let fjf = [25, 7, 99, 3, 42];
+   console.log(small_number(fjf));
+
+   let sum = (srr) =>{
+       let sume = 0;
+           i = 0
+           while(i < srr.length){
+               sume = srr[i] + sume;
+               i++
+           }
+           return sume;
+   }
+   let fjff = [25, 7, 99, 3, 42];
+   console.log(sum(fjff));
+
+   let swap = (arr, index1, index2) =>{
+       let arr1 = arr[index1];
+       arr[index1] = arr[index2];
+       arr[index2] = arr1;
+       return arr;
+   };
+
+   swap([11,22,33,44],1,2);
+
+   let  exchange = (sum_ua, arr, currency) =>{
+       for (let i = 0; i < arr.length; i++) {
+           if (arr[i].currency === currency) {
+               return  sum_ua / arr[i].value;
+           }
+       }
+   }
+
+console.log(exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'EUR'))
+
+
+</script>
+
+</body>
+</html>
