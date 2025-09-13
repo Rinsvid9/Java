@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<script>
+
+
+
+    // fetch('https://dummyjson.com/carts?limit=55')
+    //     .then(res => res.json())
+    //     .then(value => {
+    //         let {carts} = value;
+    //         for(const cart of carts){
+    //             for(let [key, value] of Object.entries(cart)){
+    //                 if(Array.isArray(value)){
+    //                     for(const el of value){
+    //                         if (typeof el === "object" && el !== null) {
+    //                             for (const [prodKey, prodValue] of Object.entries(el)) {
+    //                                 document.write(`<div>${prodKey}: ${prodValue}</div>`);
+    //                             }
+    //                         }else {
+    //                             document.write(`<div>${key}: ${value}</div>`);
+    //                         }
+    //                     }
+    //                 } else if((typeof value === "object" && value !== null)) {
+    //                     for (const [innerKey, innerValue] of Object.entries(value)) {
+    //                         document.write(`<div>${innerKey}: ${innerValue}</div>`);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     });
+
+
+    fetch('https://dummyjson.com/recipes?limit=55')
+        .then(res => res.json())
+        .then(rec => {
+            let {recipes} =rec
+            console.log(recipes)
+            for (let recipe of recipes){
+                const div = document.createElement('div')
+                const ul = document.createElement('ul')
+                for(let value of Object.values(recipe)){
+                    const li = document.createElement('li')
+                    li.innerText = `${value}`
+                    ul.appendChild(li)
+
+                }
+                const im = document.createElement('img')
+                im.src = recipe.image;
+                div.appendChild(im)
+
+                div.appendChild(ul)
+                document.body.appendChild(div)
+            }
+        });
+
+
+</script>
+
+</body>
+</html>

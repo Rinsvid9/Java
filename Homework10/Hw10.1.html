@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*#text{*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    background-color: maroon;*/
+        /*}*/
+        /*button{*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*}*/
+
+        #counter{
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div id="text">-->
+<!--    <button onclick="change()">Click Me</button>-->
+<!--</div>-->
+
+<!--<form id="heh">-->
+<!--    <label for="age">Your age</label>-->
+<!--    <input type="number" name="age" id="age" min="18" max="100">-->
+<!--    <button onclick="getAge()">Submit</button>-->
+<!--</form>-->
+
+<!--<form id="kek">-->
+<!--    <input type="text" name="Name" placeholder="Enter your name">-->
+<!--    <input type="text" name="Surname" placeholder="Enter your surname">-->
+<!--    <input type="number" name="Age" placeholder="Enter your age">-->
+<!--    <button type="button" onclick="get_all()">submit</button>-->
+<!--</form>-->
+
+<div id="counter" onload="addEventListener()">1</div>
+
+<script>
+
+
+    // function change(){
+    //     document.getElementById("text").style.backgroundColor = "Transparent";
+    // };
+
+    // function getAge(){
+    //     let form = document.getElementById('heh');
+    //     let butt = document.getElementsByName("button");
+    //     let age = form.elements["age"].value;
+    //     if(!age){
+    //         document.body.innerHTML = "Enter your age your bastard!"
+    //         console.log("Enter your age your bastard!");
+    //     }else if(age >= 18){
+    //         document.body.innerHTML = "Let's watch Boku no Pico together***";
+    //         console.log("Let's watch Boku no Pico together***");
+    //     }else if(age <= 18){
+    //         document.body.innerHTML = "You need to grove a little bit more little prince";
+    //         console.log("You need to grove a little bit more little prince");
+    //     }
+    //
+    // }
+
+    // function get_all(){
+    //     let kek = document.getElementById('kek');
+    //     let div = document.createElement('div');
+    //     let name = kek.elements['Name'].value;
+    //     let surname = kek.elements['Surname'].value;
+    //     let age = kek.elements['Age'].value;
+    //     let new_w = {name: name, surname: surname, age: age};
+    //     console.log(new_w);
+    //     div.innerText = `${name}, ${surname}, ${age}`
+    //     document.body.appendChild(div);
+    // }
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+        let cou = document.getElementById('counter');
+        let saved = Number(localStorage.getItem('cou')) || 0;
+        let new_s = saved + 1;
+        localStorage.setItem('cou', JSON.stringify(new_s));
+        cou.innerText = new_s;
+        console.log(cou.innerText);
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

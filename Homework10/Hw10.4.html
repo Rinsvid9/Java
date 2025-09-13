@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<form id="form1">-->
+<!--    <input type="text" name="srt">-->
+<!--    <input type="number" name="row">-->
+<!--    <input type="number" name="num">-->
+<!--    <button type="button" onclick="tabl()">Submit</button>-->
+
+<!--</form>-->
+
+<div id="container">
+<!--    <button type="button" onclick=addCour()>Add Cour</button>-->
+<!--    <button type="button" onclick=addCour()>Remove Cour</button>-->
+</div>
+<button type="button" onclick="nextPage()">Add Cour</button>
+<button type="button" onclick="prevPage()">Remove Cour</button>
+
+<script>
+
+    let current_page = 1;
+
+
+
+    // function tabl() {
+//     let form = document.getElementById("form1");
+//     let srt = form.elements['srt'].value;
+//     let row =Number(form.elements['row'].value);
+//     let num =Number(form.elements['num'].value);
+//     let table = document.createElement('table')
+//     for (let i = 0; i < row; i++) {
+//         let tr = document.createElement('tr');
+//         for(let j = 0; j < num; j++) {
+//             let td = document.createElement('td');
+//             td.innerText = srt;
+//             tr.appendChild(td);
+//         }
+//         table.appendChild(tr);
+//     }
+//     document.body.appendChild(table);
+// }
+
+function addCour(arr, current_page){
+    let content = document.getElementById('container');
+    let start = (current_page - 1) * 10;
+    let end = current_page * 10;
+    content.innerHTML = ""
+    for(let i = start; i < end; i++){
+        if(arr[i] !== undefined){
+            let pe = document.createElement("p")
+            content.appendChild(pe);
+            if(typeof arr[i] === "string"){
+                pe.innerText += arr[i];
+            }
+            if(Array.isArray(arr[i])){
+                for(let j = 0; j < arr[i].length; j++){
+                    pe.innerText += arr[i][j];
+                }
+            }
+
+            for(let key in arr[i]){
+                if(arr[i].hasOwnProperty(key)){
+                    pe.innerText += arr[i][key] + " ";
+                }
+            }
+
+        }
+    }
+}
+
+    function nextPage() {
+        if (current_page < Math.ceil(data.length / 10)) {
+            current_page++;
+            addCour(data, current_page);
+        }
+    }
+
+    function prevPage() {
+        if (current_page > 1) {
+            current_page--;
+            addCour(data, current_page);
+        }
+    }
+
+
+
+let data = [
+    {
+        "title": "Миронівська територіальна громада ",
+        "type": "hromada"
+    },
+    {
+        "title": "Вознесенський район",
+        "type": "raion"
+    },
+    {
+        "title": "Синельниківський район",
+        "type": "raion"
+    },
+    {
+        "title": "Фастівська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Вознесенська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Житомирський район",
+        "type": "raion"
+    },
+    {
+        "title": "Дружківська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "м. Фастів",
+        "type": "city"
+    },
+    {
+        "title": "Слов'янська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Запорізький район",
+        "type": "raion"
+    },
+    {
+        "title": "м. Слов'янськ",
+        "type": "city"
+    },
+    {
+        "title": "м. Кременчук",
+        "type": "city"
+    },
+    {
+        "title": "Ніжинський район",
+        "type": "raion"
+    },
+    {
+        "title": "м. Ватутіне",
+        "type": "city"
+    },
+    {
+        "title": "Ватутінська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Кременчуцька територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Пологівський район",
+        "type": "raion"
+    },
+    {
+        "title": "Дніпровська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "м. Дніпро",
+        "type": "city"
+    },
+    {
+        "title": "Лозівський район",
+        "type": "raion"
+    },
+    {
+        "title": "Покровська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "м. Обухів",
+        "type": "city"
+    },
+    {
+        "title": "Узинська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Шепетівський район",
+        "type": "raion"
+    },
+    {
+        "title": "Пирятинська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Сумський район",
+        "type": "raion"
+    },
+    {
+        "title": "Харківський район",
+        "type": "raion"
+    },
+    {
+        "title": "Жашківська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "м. Пирятин",
+        "type": "city"
+    },
+    {
+        "title": "Павлоградський район",
+        "type": "raion"
+    },
+    {
+        "title": "Голованівський район",
+        "type": "raion"
+    },
+    {
+        "title": "Обухівська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "Подільський район",
+        "type": "raion"
+    },
+    {
+        "title": "м. Охтирка",
+        "type": "city"
+    },
+    {
+        "title": "Мар'їнська територіальна громада",
+        "type": "hromada"
+    },
+    {
+        "title": "м. Мелітополь",
+        "type": "city"
+    },
+    {
+        "title": "Куп’янський район",
+        "type": "raion"
+    }
+];
+
+    addCour(data, current_page);
+
+
+
+
+</script>
+
+</body>
+</html>

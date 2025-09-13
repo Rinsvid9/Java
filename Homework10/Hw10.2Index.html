@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="on_load()">
+
+<script>
+
+    function on_load() {
+        let curr_date = new Date().toDateString();
+        let curr_time = new Date().toLocaleTimeString();
+        let sesion =
+            {date: curr_date, time: curr_time};
+
+        let session = JSON.parse(localStorage.getItem("session")) || []
+        session.push(sesion);
+
+        localStorage.setItem("session", JSON.stringify(session));
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

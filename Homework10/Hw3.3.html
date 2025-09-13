@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #counter{
+            width: 200px;
+            height: 200px;
+            background-color: firebrick;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<!--<body onclick="addToLocalStorage()">-->
+
+<!--<form id="trans" oninput="trans()">-->
+<!--    <input type="number" name="kg" placeholder="kg">-->
+<!--</form>-->
+<!--<p id="res"></p>-->
+
+<div id="counter" onload="addEventListener()">100</div>
+
+<script>
+
+// function trans(){
+//     let ress = document.getElementById("trans");
+//     let kg = ress.elements['kg'].value;
+//     let res = document.getElementById("res");
+//     let transform =Number(kg) * 2.20462;
+//     res.innerText = String(transform);
+//
+// }
+
+
+// function addToLocalStorage(arrayName, objToAdd){
+//     let par = JSON.parse(localStorage.getItem(arrayName)) || [];
+//     par.push(objToAdd);
+//     localStorage.setItem(arrayName, JSON.stringify(par));
+//
+// }
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    let cou = document.getElementById('counter');
+    let time_count = new Date().getTime();
+    let saved_time =Number(localStorage.getItem('saved_time')) || 0;
+    let saved = Number(localStorage.getItem('cou'));
+    if (!saved) {
+        saved = 100;
+        localStorage.setItem('cou', saved);
+    }
+    cou.innerText = saved;
+    if(time_count - saved_time >= 10000){
+        let new_s = saved + 10;
+        localStorage.setItem('cou', JSON.stringify(new_s));
+        localStorage.setItem('saved_time', JSON.stringify(time_count));
+        cou.innerText = new_s;
+        console.log(cou.innerText);
+    }
+
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>
