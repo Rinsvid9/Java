@@ -1,0 +1,74 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: forestgreen;
+    width: 500px;
+    padding: 30px;
+    margin: 10px auto;
+    box-sizing: border-box;
+
+}
+
+.user-info ul,
+.user-info li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-butt {
+    display: block;
+    width: 90%;
+    margin: 18px auto;
+    padding: 12px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    order: 2;
+}
+
+.post-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    order: 3;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.user-cardP{
+    flex: 0 0 calc(20% - 10px);
+    min-width: 0;
+    background: green;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.post-info{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+

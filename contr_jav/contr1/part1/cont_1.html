@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+  <link rel="stylesheet" href="contr_st_main.css">
+    <link rel="stylesheet" href="contr0-480.css">
+    <link rel="stylesheet" href="contr480-760.css">
+
+
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="recipe" id="auch">
+
+        <form class="recipe-form">
+            <div class="left1">
+                <label for="recipe-name">Name-value Pair</label>
+                <input type="text" name="recipe-name" id="recipe-name" >
+            </div>
+            <div class="right1">
+                <button type="submit" id="butt1">Add</button>
+            </div>
+        </form>
+        <form class="recipe-details">
+            <div class="left2">
+                <label>List</label>
+                <textarea name="recipe-list" id="recipe-list" cols="30" rows="10"></textarea>
+            </div>
+            <div class="butt">
+                <button type="submit" id="name">Sort by Name</button>
+                <button type="submit" id="lue">Sort by Value</button>
+                <button type="submit" id="dell" >Delete</button>
+            </div>
+        </form>
+
+
+
+    </div>
+</div>
+
+<script>
+
+    let auch = document.getElementById("recipe-name");
+    let butt = document.getElementById("butt1");
+
+    butt.addEventListener("click", function(event){
+        event.preventDefault();
+        let res = document.getElementById("recipe-list");
+        let value = auch.value;
+        let new_list =JSON.parse(localStorage.getItem('new_list')) || [];
+        if(value.match(/^[A-Za-z0-9]+\s*=\s*[A-Za-z0-9]+$/
+        )){
+            const[key, val] = value.split("=");
+            new_list.push({key,value: val});
+            localStorage.setItem('new_list', JSON.stringify(new_list));
+            console.log(new_list);
+
+        }
+        auch.value = "";
+        console.log(new_list);
+        let arr = JSON.parse(localStorage.getItem('new_list')) || [];
+        res.value = ''
+        if(Array.isArray(arr)){
+            for(const el of  arr){
+                res.value += `${el.key} = ${el.value}\n`;
+            }
+        }
+    })
+
+    let name = document.getElementById("name");
+    name.onclick = function(event){
+        event.preventDefault();
+        let list = JSON.parse(localStorage.getItem('new_list')) || [];
+        console.log(list);
+        list.sort((a, b) =>{
+                const keyA = a.key;
+                const keyB = b.key;
+                if(keyA < keyB){
+                    return -1;
+                }
+                if(keyA > keyB){
+                    return 1;
+                }
+                return 0;
+            })
+        localStorage.setItem('new_list', JSON.stringify(list));
+        let res = document.getElementById("recipe-list");
+        res.value = "";
+        let arr = JSON.parse(localStorage.getItem('new_list')) || [];
+        if(Array.isArray(arr)){
+            for(const el of  arr){
+                res.value += `${el.key} = ${el.value}\n`;
+            }
+        }
+    }
+
+    let lue = document.getElementById("lue");
+    lue.onclick = function(event){
+        event.preventDefault();
+        let list = JSON.parse(localStorage.getItem('new_list')) || [];
+        console.log(list);
+        list.sort((a, b) =>{
+            const valueA = a.value;
+            const valueB = b.value;
+            if(valueA < valueB){
+                return -1;
+            }
+            if(valueA > valueB){
+                return 1;
+            }
+            return 0;
+        })
+        localStorage.setItem('new_list', JSON.stringify(list));
+        let res = document.getElementById("recipe-list");
+        res.value = "";
+        let arr = JSON.parse(localStorage.getItem('new_list')) || [];
+        if(Array.isArray(arr)){
+            for(const el of  arr){
+                res.value += `${el.key} = ${el.value}\n`;
+            }
+        }
+
+    }
+
+    let dell = document.getElementById("dell");
+    dell.onclick = function(event){
+        event.preventDefault();
+        let new_list1 = JSON.parse(localStorage.getItem('new_list')) || [];
+        new_list1.splice(0, new_list1.length)
+        let res = document.getElementById("recipe-list");
+        res.value = "";
+        localStorage.setItem('new_list', JSON.stringify(new_list1));
+        console.log(new_list1);
+
+    };
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

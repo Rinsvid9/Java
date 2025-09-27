@@ -1,0 +1,34 @@
+.post-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: forestgreen;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.post-card li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.comments-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.comment-card {
+    flex: 0 0 calc(25% - 10px);
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+

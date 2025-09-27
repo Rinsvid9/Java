@@ -1,0 +1,39 @@
+@media (max-width: 600px) {
+    .recipe-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-left: 0;
+        height: auto;
+    }
+
+    .left1, .right1 {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .right1 button {
+        width: 100%;
+    }
+
+    .recipe-details {
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 0;
+        height: auto;
+    }
+
+    .left2, .butt {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .butt {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .butt button {
+        width: 100%;
+    }
+}

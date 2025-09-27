@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="user_style.css">
+
+</head>
+<body>
+
+
+
+
+<button id="loadPosts">post of current user</button>
+
+<script>
+
+    let wrapdiv = document.createElement('div');
+    wrapdiv.classList.add('post-wrapper');
+    document.body.appendChild(wrapdiv);
+
+
+    let arr = JSON.parse(localStorage.getItem('selectedUser'));
+
+    function unpuck(ob, parr){
+        let ul = document.createElement('ul');
+        ul.classList.add('user-info');
+        if (Array.isArray(ob)){
+            ob.forEach(item =>{
+                let li = document.createElement('li');
+                if(typeof item == 'object' && typeof item !== null){
+                    li.innerHTML = item;
+                    ul.appendChild(li);
+                    unpuck(item, ul);
+                }else {
+                    ul.innerHTML = item;
+                }
+
+            });
+        }
+
+
+        for(const[key, value] of Object.entries(ob)){
+            let li = document.createElement('li');
+
+            if(typeof value === 'object' && value !== null){
+                li.innerText = `${key}`;
+                ul.appendChild(li);
+                unpuck(value, ul);
+            } else {
+                li.innerText = `${key} : ${value}`;
+            }
+            ul.appendChild(li);
+
+        }
+
+        parr.appendChild(ul);
+
+    }
+
+    unpuck(arr, document.body)
+
+    let butt = document.getElementById('loadPosts');
+    butt.classList.add('post-butt');
+
+    butt.addEventListener('click', function(event){
+        event.preventDefault();
+        let userId = JSON.parse(localStorage.getItem('selectedUser'));
+        console.log(userId.id);
+
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId.id}/posts`)
+            .then(response => response.json())
+            .then(data => {
+                let posts = data;
+                console.log(posts);
+                localStorage.setItem('posts', JSON.stringify(posts));
+                for(const post of posts){
+
+                    let div = document.createElement('div');
+                    div.classList.add('user-cardP');
+                    let butt = document.createElement('button');
+                    butt.innerText = "Get it"
+                    butt.onclick = function (){
+                        localStorage.setItem("selectedPost", JSON.stringify(post));
+                        window.location.href = "post-details.html";
+                    }
+                    let ul = document.createElement('ul');
+                    ul.classList.add('post-info');
+                    let li = document.createElement('li');
+                    li.innerText = `${post.title}`;
+                    ul.appendChild(li);
+                    ul.appendChild(butt)
+                    div.appendChild(ul);
+                    wrapdiv.appendChild(div);
+                }
+
+
+        })
+    } , { once: true })
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
